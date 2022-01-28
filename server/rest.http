@@ -1,0 +1,12 @@
+POST https://pwa-04.herokuapp.com/notify 
+Content-Type: application/json
+
+{
+    "message":"Hello test"
+}
+
+################################
+DELETE http://localhost:3000/employees/5
+
+########
+GET http://localhost:3000/employees

@@ -1,0 +1,39 @@
+[
+  {
+    "id": 1,
+    "title": "Pizza",
+    "ingredients": [
+      "300ml Wasser",
+      "1 Shot Olivenöl",
+      "500g Mehl",
+      "7g Trockengerm",
+      "1TL Salz",
+      "1TL Zucker"
+    ],
+    "prep": "Alles in einer Schüssel verrühren und Wasser langsam hinzugeben, bis alles eine homogene Masse geworden ist.",
+    "desc": "Einfaches Pizzateig Rezept",
+    "img": "/img/pizza.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Vegane Lasagne mit Spinat und Pilzen",
+    "ingredients": [
+      "400g Champignons",
+      "1 Zwiebel",
+      "2 Knoblauch",
+      "1EL Thymian",
+      "1EL Olivenöl",
+      "150g Spinat",
+      "130g Marine",
+      "3EL Mehl",
+      "480ml Soja-/Hafer/etc. Milch",
+      "2EL Nährhefe",
+      "1TL Muskat",
+      "500g passierte Tomaten",
+      "500g Lasagneblätter"
+    ],
+    "prep": "Margarine in einem Topf bei mittlerer Hitze zerlassen. Mehl einrühren, dann langsam die warme Milch unter gleichmäßigem Rühren eingießen. Hefeflocken, Muskat, Salz und Pfeffer einrühren. Zwiebel und Knoblauch schälen, Champignons putzen, in Scheiben schneiden. Zwiebel, Konbaluch und Thymian fein hacken. Öl in eine Pfanne geben und Zwiebel und Knoblauch anschwitzen. Champignons und Thymian hinzufügen und einige Minuten kochen, bis die Champignons dunkelbraun werden. Spinat hinzugeben und unterrühren; kochen, bis er zusammenfällt. Mit Salz und Pfeffer würzen. Eine Lage passierte Tomaten auf den Boden der Auflaufform geben. Eine Lage Lasagneblätter, eine Lage Sauce und eine Lage Spinat Champignon Mischung; Lasagneblätter und wiederholen. Mit einer Lage Sauce und Spinat Champignons abschließen. Mit Thymian garnieren. Für 30-40min bei 200°C im Backofen backen.",
+    "desc": "Einfache vegane Lasagne",
+    "img": "/img/lasagne.jpg"
+  }
+]
