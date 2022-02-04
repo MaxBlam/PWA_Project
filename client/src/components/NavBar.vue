@@ -1,12 +1,13 @@
 <template>
   <div>
-    <v-app-bar color="white">
+    <v-app-bar color="grey darken-4" dark>
+      <v-img src="../assets/logo.svg"></v-img>
       <v-toolbar-title>Nekotastic</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>      
+      <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
     </v-app-bar>
 
-    <v-navigation-drawer v-model="drawer" absolute right temporary>
+    <v-navigation-drawer v-model="drawer" absolute right temporary dark>
       <v-list nav>
         <v-list-item-group active-class="warning white--text">
           <v-list-item to="/">
@@ -20,7 +21,7 @@
             <v-list-item-icon>
               <v-icon>mdi-book</v-icon>
             </v-list-item-icon>
-            <v-list-item-title >Recipes</v-list-item-title>
+            <v-list-item-title>Recipes</v-list-item-title>
           </v-list-item>
 
           <v-list-item to="/add">
@@ -42,4 +43,3 @@ export default {
   }),
 };
 </script>
-
