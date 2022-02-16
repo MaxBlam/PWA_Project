@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <v-container fill-height class="ma-0 pa-0">
     <Camera />
-  </div>
+  </v-container>
 </template>
 
 <script>

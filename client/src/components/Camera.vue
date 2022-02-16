@@ -1,7 +1,7 @@
 <template>
-  <v-container fluid>
-    a
+  <v-container fluid fill-height class="ma-0 pa-0">
     <WebCam
+      v-if="img == null"
       ref="webcam"
       :device-id="deviceId"
       width="100%"
@@ -11,6 +11,8 @@
       @cameras="onCameras"
       @camera-change="onCameraChange"
     />
+    <img :src="img" v-else alt="" />
+    <v-btn color="secondary" @click="onCapture"> Capture </v-btn>
   </v-container>
 </template>
 
@@ -21,13 +23,41 @@ export default {
     WebCam,
   },
   data: () => ({
-    deviceId: '0',
+    deviceId: null,
+    camera: null,
+    devices: [],
+    img: null,
   }),
+  computed: {
+    device: function () {
+      return this.devices.find(n => n.deviceId === this.deviceId);
+    },
+  },
+  watch: {
+    camera: function (id) {
+      this.deviceId = id;
+    },
+    devices: function () {
+      // Once we have a list select the first one
+      const [first, ...tail] = this.devices;
+      console.log(...tail);
+      if (first) {
+        this.camera = first.deviceId;
+        this.deviceId = first.deviceId;
+      }
+    },
+  },
   methods: {
     onStarted() {},
     onStopped() {},
     onError() {},
-    onCameras() {},
+    onCapture() {
+      this.img = this.$refs.webcam.capture();
+    },
+    onCameras(cameras) {
+      this.devices = cameras;
+      console.log('On Cameras Event', cameras);
+    },
     onCameraChange() {},
   },
 };
