@@ -1,5 +1,5 @@
 <template>
-  <v-container fill-height class="ma-0 pa-0">
+  <v-container fill-height fluid class="ma-0 pa-0">
     <Camera />
   </v-container>
 </template>

@@ -2,6 +2,7 @@
   <v-app>
     <NavBar />
     <v-main>
+      {{ recipes }}
       <router-view />
     </v-main>
   </v-app>
@@ -9,13 +10,26 @@
 
 <script>
 import NavBar from '@/components/NavBar.vue';
+import axios from 'axios';
 export default {
   name: 'App',
   components: {
     NavBar,
   },
   data: () => ({
-    //
+    recipes: [],
   }),
+  created() {
+    this.getRecipes();
+  },
+  methods: {
+    async getRecipes() {
+      const { data } = await axios({
+        url: 'http://localhost:3000/recipes',
+        method: 'GET',
+      });
+      this.recipes = data;
+    },
+  },
 };
 </script>

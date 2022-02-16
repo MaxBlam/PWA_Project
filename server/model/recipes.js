@@ -3,8 +3,8 @@ const path = require('path');
 
 const f = path.resolve(__dirname, 'recipes.json');
 
-const data = fs.readFileSync(f);
-let { recipes } = JSON.parse(data);
+const rawdata = fs.readFileSync(f);
+let recipes = JSON.parse(rawdata);
 
 const getRecipesModel = () => recipes;
 

@@ -1,4 +1,3 @@
-const express = require('express');
 const asyncHandler = require('express-async-handler');
 const webpush = require('web-push');
 const subscription = [];
@@ -16,6 +15,7 @@ webpush.setVapidDetails(
 const { getRecipesModel, pstRecipeModel } = require('../model/recipes');
 
 const getRecipes = asyncHandler(async (req, res) => {
+  console.log('test');
   res.status(200).json(await getRecipesModel());
 });
 const pstRecipe = asyncHandler(async (req, res) => {
