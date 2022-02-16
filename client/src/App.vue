@@ -2,8 +2,7 @@
   <v-app>
     <NavBar />
     <v-main>
-      {{ recipes }}
-      <router-view />
+      <router-view :recipes="recipes" />
     </v-main>
   </v-app>
 </template>
