@@ -1,15 +1,16 @@
 <template>
-    <div>
-
-    </div>
+  <div>
+    <Camera />
+  </div>
 </template>
 
 <script>
-    export default {
-        
-    }
+import Camera from '@/components/Camera.vue';
+export default {
+  components: {
+    Camera,
+  },
+};
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

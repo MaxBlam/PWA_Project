@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-app-bar color="grey darken-4" dark>
-      <v-img src="../assets/logo.svg"></v-img>
+      <v-img src="../assets/logo.svg" max-height="50" max-width="50" class="mx-3" contain></v-img>
       <v-toolbar-title>Nekotastic</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
