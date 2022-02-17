@@ -1,6 +1,11 @@
 <template>
   <v-container fluid fill-height class="d-flex justify-space-around flex-wrap">
-    <Card v-for="recipe of recipes" :key="recipe.id" :recipe="recipe" />
+    <Card
+      v-for="recipe of recipes"
+      :key="recipe.id"
+      :recipe="recipe"
+      @click="router.push('/recipe/' + recipe.id)"
+    />
   </v-container>
 </template>
 

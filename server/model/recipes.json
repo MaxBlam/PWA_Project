@@ -12,7 +12,8 @@
     ],
     "prep": "Alles in einer Schüssel verrühren und Wasser langsam hinzugeben, bis alles eine homogene Masse geworden ist.",
     "desc": "Einfaches Pizzateig Rezept",
-    "img": "/img/pizza.jpg"
+    "img": "/img/pizza.webp",
+    "rating": 5.0
   },
   {
     "id": 2,
@@ -34,6 +35,18 @@
     ],
     "prep": "Margarine in einem Topf bei mittlerer Hitze zerlassen. Mehl einrühren, dann langsam die warme Milch unter gleichmäßigem Rühren eingießen. Hefeflocken, Muskat, Salz und Pfeffer einrühren. Zwiebel und Knoblauch schälen, Champignons putzen, in Scheiben schneiden. Zwiebel, Konbaluch und Thymian fein hacken. Öl in eine Pfanne geben und Zwiebel und Knoblauch anschwitzen. Champignons und Thymian hinzufügen und einige Minuten kochen, bis die Champignons dunkelbraun werden. Spinat hinzugeben und unterrühren; kochen, bis er zusammenfällt. Mit Salz und Pfeffer würzen. Eine Lage passierte Tomaten auf den Boden der Auflaufform geben. Eine Lage Lasagneblätter, eine Lage Sauce und eine Lage Spinat Champignon Mischung; Lasagneblätter und wiederholen. Mit einer Lage Sauce und Spinat Champignons abschließen. Mit Thymian garnieren. Für 30-40min bei 200°C im Backofen backen.",
     "desc": "Einfache vegane Lasagne",
-    "img": "/img/lasagne.jpg"
+    "img": "/img/lasagne.webp",
+    "rating": 4.0
+  },
+  {
+    "id": 3,
+    "title": "Nix",
+    "ingredients": [
+      "400g Luft"
+    ],
+    "prep": "400g Luft mit nichts mischen und langsam zu nichts werden lassen",
+    "desc": "Einfache mediterane Nichts-Mischung",
+    "img": "/img/nichts.webp",
+    "rating": 1.0
   }
 ]

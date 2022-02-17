@@ -1,21 +1,32 @@
 const path = require("path");
 
 module.exports = {
+  configureWebpack: {
+    module: {
+      rules: [
+        {
+          test: /.(webp)$/i,
+
+          use: [{ loader: 'file-loader' }],
+        },
+      ],
+    },
+  },
   pwa: {
-    workboxPluginMode: "InjectManifest",
+    workboxPluginMode: 'InjectManifest',
     workboxOptions: {
-      swSrc: "public/service-worker.js",
+      swSrc: 'public/service-worker.js',
     },
     manifestOptions: {
-      name: "Nekotastic - Digital Cookbook",
-      short_name: "Nekotastic",
-      theme_color: "#F4A300",
-      background_color: "#222222",
+      name: 'Nekotastic - Digital Cookbook',
+      short_name: 'Nekotastic',
+      theme_color: '#F4A300',
+      background_color: '#222222',
     },
   },
 
-  outputDir: path.resolve(__dirname, "../server/client"),
+  outputDir: path.resolve(__dirname, '../server/client'),
   productionSourceMap: false,
 
-  transpileDependencies: ["vuetify"],
+  transpileDependencies: ['vuetify'],
 };
