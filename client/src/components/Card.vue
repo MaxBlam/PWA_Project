@@ -5,7 +5,7 @@
     shaped
     :to="`/recipes/` + recipe.id"
   >
-    <v-img :src="`http://localhost:3000` + recipe.img"></v-img>
+    <v-img :src="serverAddress + recipe.img"></v-img>
 
     <v-card-title>{{ recipe.title }}</v-card-title>
 
@@ -13,7 +13,7 @@
       <v-row align="center" class="mx-0">
         <v-rating
           :value="recipe.rating"
-          color="amber"
+          color="warning"
           dense
           half-increments
           readonly
@@ -33,6 +33,9 @@ export default {
   props: {
     recipe: Object,
   },
+  data: () => ({
+    serverAddress: process.env.VUE_APP_SERVER,
+  }),
 };
 </script>
 

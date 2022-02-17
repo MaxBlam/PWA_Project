@@ -1,17 +1,6 @@
-const path = require("path");
+const path = require('path');
 
 module.exports = {
-  configureWebpack: {
-    module: {
-      rules: [
-        {
-          test: /.(webp)$/i,
-
-          use: [{ loader: 'file-loader' }],
-        },
-      ],
-    },
-  },
   pwa: {
     workboxPluginMode: 'InjectManifest',
     workboxOptions: {
@@ -22,6 +11,17 @@ module.exports = {
       short_name: 'Nekotastic',
       theme_color: '#F4A300',
       background_color: '#222222',
+    },
+    configureWebpack: {
+      module: {
+        rules: [
+          {
+            test: /.(webp)$/i,
+
+            use: [{ loader: 'file-loader' }],
+          },
+        ],
+      },
     },
   },
 
