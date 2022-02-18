@@ -1,23 +1,13 @@
 <template>
-  <v-container fluid fill-height class="ma-0 pa-0">
-    <v-container fill-height fluid v-if="img == null" class="d-flex justify-center">
-      <WebCam
-        ref="webcam"
-        :device-id="deviceId"
-        @started="onStarted"
-        @stopped="onStopped"
-        @error="onError"
-        @cameras="onCameras"
-        @camera-change="onCameraChange"
-      />
-      <v-btn color="secondary" @click="onCapture"> Capture </v-btn>
-    </v-container>
-    <v-container fluid v-else class="d-flex justify-center">
-      <img :src="img" alt="" />
-      <v-btn color="secondary" @click="uploadPicture"> Upload </v-btn>
-      <v-btn color="secondary" @click="img = null"> Try again </v-btn>
-    </v-container>
-  </v-container>
+  <WebCam
+    ref="webcam"
+    :device-id="deviceId"
+    @started="onStarted"
+    @stopped="onStopped"
+    @error="onError"
+    @cameras="onCameras"
+    @camera-change="onCameraChange"
+  />
 </template>
 
 <script>
@@ -62,9 +52,7 @@ export default {
       this.devices = cameras;
       console.log('On Cameras Event', cameras);
     },
-    uploadPicture(){
-
-    },
+    uploadPicture() {},
     onCameraChange() {},
   },
 };

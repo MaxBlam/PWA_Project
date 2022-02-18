@@ -33,7 +33,7 @@
       "500g passierte Tomaten",
       "500g Lasagneblätter"
     ],
-    "prep": "Margarine in einem Topf bei mittlerer Hitze zerlassen. Mehl einrühren, dann langsam die warme Milch unter gleichmäßigem Rühren eingießen. Hefeflocken, Muskat, Salz und Pfeffer einrühren. Zwiebel und Knoblauch schälen, Champignons putzen, in Scheiben schneiden. Zwiebel, Konbaluch und Thymian fein hacken. Öl in eine Pfanne geben und Zwiebel und Knoblauch anschwitzen. Champignons und Thymian hinzufügen und einige Minuten kochen, bis die Champignons dunkelbraun werden. Spinat hinzugeben und unterrühren; kochen, bis er zusammenfällt. Mit Salz und Pfeffer würzen. Eine Lage passierte Tomaten auf den Boden der Auflaufform geben. Eine Lage Lasagneblätter, eine Lage Sauce und eine Lage Spinat Champignon Mischung; Lasagneblätter und wiederholen. Mit einer Lage Sauce und Spinat Champignons abschließen. Mit Thymian garnieren. Für 30-40min bei 200°C im Backofen backen.",
+    "prep": "Margarine in einem Topf bei mittlerer Hitze zerlassen. Mehl einrühren, dann langsam die warme Milch unter gleichmäßigem Rühren eingießen. <br/><br/> Hefeflocken, Muskat, Salz und Pfeffer einrühren. Zwiebel und Knoblauch schälen, Champignons putzen, in Scheiben schneiden. Zwiebel, Konbaluch und Thymian fein hacken.<br/> Öl in eine Pfanne geben und Zwiebel und Knoblauch anschwitzen. Champignons und Thymian hinzufügen und einige Minuten kochen, bis die Champignons dunkelbraun werden. Spinat hinzugeben und unterrühren; kochen, bis er zusammenfällt. Mit Salz und Pfeffer würzen. Eine Lage passierte Tomaten auf den Boden der Auflaufform geben. Eine Lage Lasagneblätter, eine Lage Sauce und eine Lage Spinat Champignon Mischung; Lasagneblätter und wiederholen. Mit einer Lage Sauce und Spinat Champignons abschließen.<br/><br/> Mit Thymian garnieren. Für 30-40min bei 200°C im Backofen backen.",
     "desc": "Einfache vegane Lasagne",
     "img": "/img/lasagne.webp",
     "rating": 4.0
@@ -41,12 +41,28 @@
   {
     "id": 3,
     "title": "Nix",
-    "ingredients": [
-      "400g Luft"
-    ],
+    "ingredients": ["400g Luft"],
     "prep": "400g Luft mit nichts mischen und langsam zu nichts werden lassen",
     "desc": "Einfache mediterane Nichts-Mischung",
     "img": "/img/nichts.webp",
     "rating": 1.0
+  },
+  {
+    "id": 4,
+    "title": "Wasser",
+    "ingredients": ["1l Wasser", "5ng Mikroplastik", "5mg Staub"],
+    "prep": "Alles in einem Behälter vermischen",
+    "desc": "Lecker Schmecker Leitungswasser",
+    "img": "/img/wasser.webp",
+    "rating": 5.0
+  },
+  {
+    "id": 5,
+    "title": "Lorem Ipsum",
+    "ingredients": ["Lorem","ipsum","dolor","sit","amet","consectetur","adipiscing","elit"],
+    "prep": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "desc": "Wie ist es hierher gekommen",
+    "img": "/img/loremipsum.webp",
+    "rating": 5.0
   }
 ]

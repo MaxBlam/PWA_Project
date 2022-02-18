@@ -8,7 +8,7 @@
         class="mx-3"
         contain
       ></v-img>
-      <v-toolbar-title>Nekotastic</v-toolbar-title>
+      <router-link to="/" style="text-decoration: none; color: inherit;"><v-toolbar-title>Nekotastic</v-toolbar-title></router-link>
       <v-spacer></v-spacer>
       <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
     </v-app-bar>

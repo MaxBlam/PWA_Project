@@ -1,8 +1,7 @@
 <template>
   <v-card
-    class="mx-auto my-12"
+    class="mx-3 my-12 rounded-xl"
     width="374"
-    shaped
     :to="`/recipes/` + recipe.id"
   >
     <v-img :src="serverAddress + recipe.img"></v-img>
