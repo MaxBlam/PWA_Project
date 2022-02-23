@@ -1,29 +1,34 @@
 <template>
-  <v-container fluid fill-height class="ma-0 pa-0">
+  <v-container fill-height fluid class="d-flex align-start">
     <v-container
-      fill-height
-      fluid
       v-if="img == null"
-      class="d-flex justify-center"
+      class="d-flex justify-start flex-column align-center"
     >
-      <Camera />
-      <v-btn color="secondary" @click="onCapture"> Capture </v-btn>
+      <v-easy-camera v-model="img" fullscreen="true"></v-easy-camera>
+      <v-btn color="secondary" @click="onCapture" class="ma-3"> Capture </v-btn>
     </v-container>
-    <v-container fluid v-else class="d-flex justify-center">
-      <v-img :src="img" alt="" />
-      <v-btn color="secondary" @click="uploadPicture"> Upload </v-btn>
-      <v-btn color="secondary" @click="img = null"> Try again </v-btn>
+    <v-container v-else class="d-flex justify-start flex-column align-center">
+      <v-img :src="img" alt="" class="camera" contain></v-img>
+      <v-btn color="secondary" @click="uploadPicture" class="ma-2">
+        Upload
+      </v-btn>
+      <v-btn color="secondary" @click="restartCam" class="ma-2">
+        Try again
+      </v-btn>
     </v-container>
   </v-container>
 </template>
 
 <script>
-import Camera from '@/components/Camera.vue';
+import EasyCamera from 'easy-vue-camera';
+
+//inside your vue options api
 export default {
   components: {
-    Camera,
+    'v-easy-camera': EasyCamera,
   },
+  data: () => ({
+    img: null,
+  }),
 };
 </script>
-
-<style lang="scss" scoped></style>
