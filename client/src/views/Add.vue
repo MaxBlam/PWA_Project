@@ -66,8 +66,27 @@
           ></v-text-field>
           <v-container fluid>
             <p>Rating</p>
-            <v-btn type="button" icon v-for="(r, i) of 5" :key="i" value="r" v-model="rating">
-              <v-icon> mdi-star-outline </v-icon>
+            <v-rating
+              color="warning"
+              empty-icon="mdi-star-outline"
+              full-icon="mdi-star"
+              hover
+              length="5"
+              size="32"
+              :value="3"
+              v-model="rating"
+            ></v-rating>
+            <v-btn
+              class="mt-3"
+              :disabled="
+                desc == '' ||
+                title == '' ||
+                prep == '' ||
+                ingredients.length == 0
+              "
+              @click="sendRecipe"
+            >
+              Share Recipe
             </v-btn>
           </v-container>
         </v-form>
@@ -93,17 +112,37 @@ export default {
     prep: '',
     ingredientsRaw: '',
     rating: 0,
-    descRules: [value => !value || value.length < 100 || 'Too many characters'],
-    titleRules: [value => !value || value.length < 40 || 'Too many characters'],
+    descRules: [
+      (value) => !value || value.length < 100 || 'Too many characters',
+    ],
+    titleRules: [
+      (value) => !value || value.length < 40 || 'Too many characters',
+    ],
   }),
   methods: {
     close() {
       this.$router.push('/');
     },
+    sendRecipe() {
+      this.$emit('sendRecipe', {
+        img: this.img,
+        desc: this.desc,
+        title: this.title,
+        prep: this.prep,
+        rating: this.rating,
+        ingredients: this.normIngredients(),
+      });
+    },
+    normIngredients() {
+      let temp;
+      temp = this.ingredients.map((ingredient) => ingredient.trim()); // Trim String whitspaces
+      temp = temp.filter((ingredient) => ingredient != ''); //Remove empty ingredients
+      return temp;
+    },
   },
   computed: {
     ingredients: function () {
-      return this.ingredientsRaw.replaceAll(', ', ',').split(',');
+      return this.ingredientsRaw.split(',');
     },
   },
 };

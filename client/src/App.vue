@@ -1,8 +1,8 @@
 <template>
   <v-app>
-    <NavBar :recipes="recipes"/>
+    <NavBar :recipes="recipes" />
     <v-main>
-      <router-view :recipes="recipes" />
+      <router-view :recipes="recipes" @sendRecipe="sendRecipe" />
     </v-main>
   </v-app>
 </template>
@@ -28,6 +28,15 @@ export default {
         method: 'GET',
       });
       this.recipes = data;
+    },
+    async sendRecipe(recipe) {
+      await axios({
+        url: 'http://localhost:3000/recipe',
+        method: 'POST',
+        contentType: 'application/json',
+        data: recipe,
+      });
+      this.getRecipes();
     },
   },
 };
