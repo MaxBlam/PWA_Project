@@ -18,8 +18,7 @@
     "express-async-handler": "^1.1.4",
     "helmet": "^4.3.1",
     "morgan": "^1.10.0",
-    "web-push": "^3.4.5",
-    "webp-converter": "^2.3.3"
+    "web-push": "^3.4.5"
   },
   "devDependencies": {
     "eslint": "^7.26.0",

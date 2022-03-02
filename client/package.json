@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "axios": "^0.26.0",
+    "client-compress": "^2.2.2",
     "core-js": "^3.6.5",
     "easy-js-camera": "^2.1.0",
     "easy-vue-camera": "^1.0.5",

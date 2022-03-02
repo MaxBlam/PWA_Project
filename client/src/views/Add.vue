@@ -112,12 +112,8 @@ export default {
     prep: '',
     ingredientsRaw: '',
     rating: 0,
-    descRules: [
-      (value) => !value || value.length < 100 || 'Too many characters',
-    ],
-    titleRules: [
-      (value) => !value || value.length < 40 || 'Too many characters',
-    ],
+    descRules: [value => !value || value.length < 100 || 'Too many characters'],
+    titleRules: [value => !value || value.length < 40 || 'Too many characters'],
   }),
   methods: {
     close() {
@@ -135,8 +131,8 @@ export default {
     },
     normIngredients() {
       let temp;
-      temp = this.ingredients.map((ingredient) => ingredient.trim()); // Trim String whitspaces
-      temp = temp.filter((ingredient) => ingredient != ''); //Remove empty ingredients
+      temp = this.ingredients.map(ingredient => ingredient.trim()); // Trim String whitspaces
+      temp = temp.filter(ingredient => ingredient != ''); //Remove empty ingredients
       return temp;
     },
   },

@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid fill-height class="d-flex justify-space-around flex-wrap">
+  <v-container fluid fill-height class="d-flex justify-space-around flex-wrap align-stretch">
     <Card
       v-for="recipe of recipes"
       :key="recipe.id"
