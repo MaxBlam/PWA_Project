@@ -128,6 +128,8 @@ export default {
         rating: this.rating,
         ingredients: this.normIngredients(),
       });
+      this.$emit('getRecipes');
+      this.$router.push('/recipes');
     },
     normIngredients() {
       let temp;

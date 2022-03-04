@@ -2,7 +2,11 @@
   <v-app>
     <NavBar :recipes="recipes" />
     <v-main>
-      <router-view :recipes="recipes" @sendRecipe="sendRecipe" />
+      <router-view
+        :recipes="recipes"
+        @sendRecipe="sendRecipe"
+        @getRecipes="getRecipes"
+      />
     </v-main>
   </v-app>
 </template>

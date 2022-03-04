@@ -1,7 +1,6 @@
 const asyncHandler = require('express-async-handler');
 const webpush = require('web-push');
 const fs = require('fs');
-const webp = require('webp-converter');
 const subscription = [];
 require('dotenv').config();
 

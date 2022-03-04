@@ -4,7 +4,7 @@
     width="374"
     :to="`/recipes/` + recipe.id"
   >
-    <v-img :src="'data:image/jpeg;base64,' + recipe.img"></v-img>
+    <v-img :src="recipe.img"></v-img>
 
     <v-card-title class="text-truncate">{{ recipe.title }}</v-card-title>
 

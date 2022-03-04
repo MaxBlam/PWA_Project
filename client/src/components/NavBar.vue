@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-app-bar color="grey darken-4" dark>
+    <v-app-bar color="grey darken-4" dark >
       <v-img
         src="../assets/logo.svg"
         max-height="50"
@@ -8,12 +8,14 @@
         class="mx-3"
         contain
       ></v-img>
-      <router-link to="/" style="text-decoration: none; color: inherit;"><v-toolbar-title>Nekotastic</v-toolbar-title></router-link>
+      <router-link to="/" style="text-decoration: none; color: inherit"
+        ><v-toolbar-title>Nekotastic</v-toolbar-title></router-link
+      >
       <v-spacer></v-spacer>
       <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
     </v-app-bar>
 
-    <v-navigation-drawer v-model="drawer" absolute right temporary dark>
+    <v-navigation-drawer v-model="drawer" app right temporary dark>
       <v-list nav>
         <v-list-item-group active-class="warning white--text">
           <v-list-item to="/" exact>
@@ -44,9 +46,10 @@
               v-model="search"
               :items="mRecipes"
               flat
-              filled rounded
+              filled
+              rounded
               label="Recipes"
-              @onChange="console.log(search)"
+              @change="push()"
             ></v-autocomplete>
           </v-list-item>
         </v-list-item-group>
@@ -67,6 +70,12 @@ export default {
   computed: {
     mRecipes: function () {
       return this.recipes.map(el => el.title);
+    },
+  },
+  methods: {
+    push() {
+      let item = this.recipes.find(el => el.title == this.search);
+      this.$router.push('/recipes/' + item.id);
     },
   },
 };

@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <v-img
-      :src="serverAddress + recipe.img"
+      :src="recipe.img"
       height="250"
       class="rounded-lg mb-5"
     ></v-img>
