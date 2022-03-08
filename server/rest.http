@@ -6,7 +6,7 @@ Content-Type: application/json
 }
 
 ################################
-DELETE http://localhost:3000/employees/5
+POST http://localhost:3000/notify
 
 ########
 GET http://localhost:3000/recipes

@@ -1,6 +1,18 @@
 <template>
   <v-app>
     <NavBar :recipes="recipes" />
+    <v-alert
+      border="top"
+      color="red"
+      prominent
+      type="info"
+      elevation="3"
+      tile
+      v-if="updateAlert"
+    >
+      Update vorhanden, bitte neustarten!
+      <v-btn light @click="window.location.reload()"> Reload </v-btn>
+    </v-alert>
     <v-main>
       <router-view
         :recipes="recipes"
@@ -21,9 +33,15 @@ export default {
   },
   data: () => ({
     recipes: [],
+    updateAlert: false,
+    window: null,
   }),
   created() {
     this.getRecipes();
+    document.addEventListener('swUpdated', this.updateAvailable, {
+      once: true,
+    });
+    this.window = window;
   },
   methods: {
     async getRecipes() {
@@ -41,6 +59,9 @@ export default {
         data: recipe,
       });
       this.getRecipes();
+    },
+    updateAvailable() {
+      this.updateAlert = true;
     },
   },
 };

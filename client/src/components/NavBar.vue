@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-app-bar color="grey darken-4" dark >
+    <v-app-bar color="grey darken-4" dark>
       <v-img
         src="../assets/logo.svg"
         max-height="50"
@@ -52,6 +52,12 @@
               @change="push()"
             ></v-autocomplete>
           </v-list-item>
+          <v-list-item @click="subscribe()">
+            <v-list-item-icon>
+              <v-icon>mdi-cellphone-message</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Subscribe</v-list-item-title>
+          </v-list-item>
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
@@ -59,6 +65,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
   data: () => ({
     drawer: false,
@@ -76,6 +83,32 @@ export default {
     push() {
       let item = this.recipes.find(el => el.title == this.search);
       this.$router.push('/recipes/' + item.id);
+    },
+    async subscribe() {
+      if (!('serviceWorker' in navigator)) {
+        console.log('no service worker!');
+        return;
+      }
+      const publicVapidKey =
+        'BJml5OhbmyK5D30Flk2yvk9vCaLGqwU8wiMeCsdYB3WSOpa8S5S-01g3dTyG041S15C_ZVT48ioln07WyOrK-Vw';
+      const registration = await navigator.serviceWorker.ready;
+      const subscription = await registration.pushManager.subscribe({
+        userVisibleOnly: true,
+        applicationServerKey: this.urlBase64ToUint8Array(publicVapidKey),
+      });
+      await axios.post('/subscribe', subscription);
+    },
+    urlBase64ToUint8Array(base64String) {
+      const padding = '='.repeat((4 - (base64String.length % 4)) % 4);
+      const base64 = (base64String + padding)
+        .replace(/-/g, '+')
+        .replace(/_/g, '/');
+      const rawData = window.atob(base64);
+      const outputArray = new Uint8Array(rawData.length);
+      for (let i = 0; i < rawData.length; ++i) {
+        outputArray[i] = rawData.charCodeAt(i);
+      }
+      return outputArray;
     },
   },
 };
