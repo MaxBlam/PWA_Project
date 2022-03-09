@@ -6,7 +6,7 @@
       class="rounded-lg mb-5"
     ></v-img>
     <v-container>
-      <v-btn to="/recipes" depressed color="warning" class="mb-3">
+      <v-btn to="/library" depressed color="warning" class="mb-3">
         <v-icon>mdi-chevron-left</v-icon> Go back
       </v-btn>
       <p class="text-h4 warning--text">{{ recipe.title }}</p>
@@ -44,9 +44,6 @@
 
 <script>
 export default {
-  data: () => ({
-    serverAddress: process.env.VUE_APP_SERVER,
-  }),
   props: {
     recipes: {
       type: Array,

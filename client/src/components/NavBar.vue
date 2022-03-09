@@ -25,7 +25,7 @@
             <v-list-item-title>Home</v-list-item-title>
           </v-list-item>
 
-          <v-list-item to="/recipes" exact>
+          <v-list-item to="/library" exact>
             <v-list-item-icon>
               <v-icon>mdi-book</v-icon>
             </v-list-item-icon>
@@ -82,7 +82,7 @@ export default {
   methods: {
     push() {
       let item = this.recipes.find(el => el.title == this.search);
-      this.$router.push('/recipes/' + item.id);
+      this.$router.push('/r/' + item.id);
     },
     async subscribe() {
       if (!('serviceWorker' in navigator)) {

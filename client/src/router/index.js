@@ -11,7 +11,7 @@ const routes = [
     component: Home,
   },
   {
-    path: '/recipes',
+    path: '/library',
     name: 'Recipes',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
@@ -20,7 +20,7 @@ const routes = [
       import(/* webpackChunkName: "about" */ '../views/Recipes.vue'),
   },
   {
-    path: '/recipes/:id',
+    path: '/r/:id',
     props: true,
     name: 'Recipe',
     // route level code-splitting

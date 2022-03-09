@@ -35,6 +35,7 @@ export default {
     recipes: [],
     updateAlert: false,
     window: null,
+    serverAddress: process.env.VUE_APP_SERVER,
   }),
   created() {
     this.getRecipes();
@@ -46,14 +47,14 @@ export default {
   methods: {
     async getRecipes() {
       const { data } = await axios({
-        url: 'http://localhost:3000/recipes',
+        url: this.serverAddress + '/recipes',
         method: 'GET',
       });
       this.recipes = data;
     },
     async sendRecipe(recipe) {
       await axios({
-        url: 'http://localhost:3000/recipe',
+        url: this.serverAddress + '/recipe',
         method: 'POST',
         contentType: 'application/json',
         data: recipe,

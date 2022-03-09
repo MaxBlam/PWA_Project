@@ -8,7 +8,7 @@
     <v-btn to="/add" rounded class="my-2 rounded-3" color="warning"
       >Add Recipe</v-btn
     >
-    <v-btn to="/recipes" rounded class="my-2" dark>Recipes</v-btn>
+    <v-btn to="/library" rounded class="my-2" dark>Recipes</v-btn>
   </v-container>
 </template>
 

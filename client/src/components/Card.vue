@@ -3,10 +3,10 @@
     <v-img
       :src="recipe.img"
       aspect-ratio="1"
-      :to="`/recipes/` + recipe.id"
+      :to="`/r/` + recipe.id"
     ></v-img>
 
-    <v-card-title class="text-truncate" :to="`/recipes/` + recipe.id">{{
+    <v-card-title class="text-truncate" :to="`/r/` + recipe.id">{{
       recipe.title
     }}</v-card-title>
 
@@ -49,7 +49,6 @@ export default {
   }),
   methods: {
     async deleteRecipe() {
-      console.log(this.recipe);
       try {
         await axios({
           url: this.serverAddress + '/recipe/' + this.recipe.id,

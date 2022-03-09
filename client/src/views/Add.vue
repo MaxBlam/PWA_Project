@@ -129,7 +129,7 @@ export default {
         ingredients: this.normIngredients(),
       });
       this.$emit('getRecipes');
-      this.$router.push('/recipes');
+      this.$router.push('/library');
     },
     normIngredients() {
       let temp;
