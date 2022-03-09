@@ -8,6 +8,7 @@
       v-for="recipe of recipes"
       :key="recipe.id"
       :recipe="recipe"
+      :offline="offline"
       @click="router.push('/recipe/' + recipe.id)"
       @getRecipes="$emit('getRecipes')"
     />
@@ -19,6 +20,7 @@ import Card from '@/components/Card.vue';
 export default {
   props: {
     recipes: Array,
+    offline: Boolean,
   },
   components: {
     Card,

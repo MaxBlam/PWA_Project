@@ -20,9 +20,9 @@
       type="info"
       elevation="3"
       tile
-      v-if="updateAlert"
+      v-if="offline"
     >
-      You're offline!
+      No internet connection found. App is running in offline mode.
     </v-alert>
     <v-main>
       <router-view
@@ -52,11 +52,11 @@ export default {
   }),
   created() {
     this.getRecipes();
-    document.addEventListener('swUpdated', this.updateAvailable, {
+    window.addEventListener('swUpdated', this.updateAvailable, {
       once: true,
     });
-    document.addEventListener('offline', () => (this.offline = true));
-    document.addEventListener('online', () => (this.offline = false));
+    window.addEventListener('offline', () => (this.offline = true));
+    window.addEventListener('online', () => (this.offline = false));
     this.window = window;
   },
   methods: {

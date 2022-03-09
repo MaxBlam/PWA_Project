@@ -7,9 +7,11 @@
       :to="`/r/` + recipe.id"
     ></v-img>
 
-    <v-card-title class="text-truncate" @click="$router.push(`/r/${recipe.id}`)">{{
-      recipe.title
-    }}</v-card-title>
+    <v-card-title
+      class="text-truncate"
+      @click="$router.push(`/r/${recipe.id}`)"
+      >{{ recipe.title }}</v-card-title
+    >
 
     <v-card-text>
       <v-row align="center" class="mx-0">
@@ -33,6 +35,7 @@
       large
       width="100%"
       class="rounded-t-0 rounded-xl"
+      :disabled="offline"
     >
       Delete
     </v-btn>
@@ -44,6 +47,7 @@ import axios from 'axios';
 export default {
   props: {
     recipe: Object,
+    offline: Boolean,
   },
   data: () => ({
     serverAddress: process.env.VUE_APP_SERVER,
