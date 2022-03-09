@@ -2,7 +2,7 @@
 if (workbox) {
   self.skipWaiting(); // Update Service Worker
   console.log(`Workbox is loaded`);
-  workbox.setConfig({ debug: true });
+  //workbox.setConfig({ debug: true });
   workbox.precaching.precacheAndRoute(self.__precacheManifest);
   workbox.routing.registerRoute( // Cache
     new RegExp('/recipes'),

@@ -1,5 +1,9 @@
 <template>
-  <v-card class="mx-3 my-12 rounded-xl" width="374">
+  <v-card
+    class="mx-3 my-12 rounded-xl"
+    width="374"
+    @click="navigator.vibrate(200)"
+  >
     <v-img
       @click="$router.push(`/r/${recipe.id}`)"
       :src="recipe.img"

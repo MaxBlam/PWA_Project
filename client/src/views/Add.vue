@@ -77,7 +77,6 @@
               v-model="rating"
             ></v-rating>
             <v-btn
-              v-haptic
               class="mt-3"
               :disabled="
                 desc == '' ||
@@ -117,6 +116,9 @@ export default {
     descRules: [value => !value || value.length < 100 || 'Too many characters'],
     titleRules: [value => !value || value.length < 40 || 'Too many characters'],
   }),
+  async created() {
+    this.desc = await navigator.clipboard.readText();
+  },
   props: {
     offline: {
       type: Boolean,

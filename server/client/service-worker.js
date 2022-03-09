@@ -1,10 +1,10 @@
-importScripts("/precache-manifest.890192b86a82aec18a5a572e334a1454.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
+importScripts("/precache-manifest.900ee73eaba49d380b674f7ea202c63d.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 /* global workbox */
 if (workbox) {
   self.skipWaiting(); // Update Service Worker
   console.log(`Workbox is loaded`);
-  workbox.setConfig({ debug: true });
+  //workbox.setConfig({ debug: true });
   workbox.precaching.precacheAndRoute(self.__precacheManifest);
   workbox.routing.registerRoute( // Cache
     new RegExp('/recipes'),
