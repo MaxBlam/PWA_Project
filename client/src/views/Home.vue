@@ -1,14 +1,14 @@
 <template>
   <v-container
-    class="d-flex justify-center align-center flex-column align-stretch bg" fluid
+    class="d-flex justify-center align-center flex-column bg" fluid
     style=""
     fill-height
   >
     <h3 class="display-3 my-2 white--text text-center">Open Recipe Database</h3>
-    <v-btn to="/add" large rounded class="my-2 rounded-3" color="warning"
+    <v-btn to="/add" rounded class="my-2 rounded-3" color="warning"
       >Add Recipe</v-btn
     >
-    <v-btn to="/recipes" large rounded class="my-2" dark>Recipes</v-btn>
+    <v-btn to="/recipes" rounded class="my-2" dark>Recipes</v-btn>
   </v-container>
 </template>
 

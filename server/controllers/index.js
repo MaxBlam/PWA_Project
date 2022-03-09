@@ -13,11 +13,22 @@ webpush.setVapidDetails(
   privateVapidKey,
 );
 
-const { getRecipesModel, pstRecipeModel } = require('../model/recipes');
+const {
+  getRecipesModel,
+  pstRecipeModel,
+  delRecipeModel,
+} = require('../model/recipes');
 
 const getRecipes = asyncHandler(async (req, res) => {
   res.status(200).json(await getRecipesModel());
 });
+
+const deleteRecipe = asyncHandler(async (req, res) => {
+  const { id } = req.params;
+  await delRecipeModel(id);
+  res.status(204).end();
+});
+
 const pstRecipe = asyncHandler(async (req, res) => {
   await pstRecipeModel(req.body);
   console.log(await getRecipesModel());
@@ -26,7 +37,7 @@ const pstRecipe = asyncHandler(async (req, res) => {
 
 const subscribe = asyncHandler(async (req, res) => {
   subscription.push(req.body);
-  res.status(201).end();
+  res.status(202).end();
 });
 
 const notify = asyncHandler(async (req, res) => {
@@ -41,4 +52,4 @@ const notify = asyncHandler(async (req, res) => {
   res.status(200).end();
 });
 
-module.exports = { getRecipes, pstRecipe, subscribe, notify };
+module.exports = { getRecipes, deleteRecipe, pstRecipe, subscribe, notify };
