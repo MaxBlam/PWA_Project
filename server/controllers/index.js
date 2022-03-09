@@ -29,7 +29,7 @@ const subscribe = asyncHandler(async (req, res) => {
   res.status(201).end();
 });
 
-const notify = asyncHandler(async req => {
+const notify = asyncHandler(async (req, res) => {
   const payload = JSON.stringify({ title: 'New Recipe!', body: req.body });
   for (const sub of subscription) {
     try {
@@ -38,6 +38,7 @@ const notify = asyncHandler(async req => {
       console.error(error);
     }
   }
+  res.status(200).end();
 });
 
 module.exports = { getRecipes, pstRecipe, subscribe, notify };

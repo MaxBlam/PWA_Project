@@ -76,7 +76,7 @@
               :value="3"
               v-model="rating"
             ></v-rating>
-            <v-btn
+            <v-btn v-haptic
               class="mt-3"
               :disabled="
                 desc == '' ||

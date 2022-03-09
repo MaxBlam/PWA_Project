@@ -5,9 +5,9 @@ if (workbox) {
   workbox.setConfig({ debug: true });
   workbox.precaching.precacheAndRoute(self.__precacheManifest);
   workbox.routing.registerRoute(
-    new RegExp('/images/.*.jpg'),
+    new RegExp('/recipes'),
     new workbox.strategies.StaleWhileRevalidate({
-      cacheName: 'maxs-image-cache',
+      cacheName: 'Nekotastic Recipe Cache',
     }),
   );
   self.addEventListener('push', event => {

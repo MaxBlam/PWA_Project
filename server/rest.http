@@ -1,12 +1,5 @@
-POST https://pwa-04.herokuapp.com/notify 
-Content-Type: application/json
-
-{
-    "message":"Hello test"
-}
-
-################################
 POST http://localhost:3000/notify
 
-########
-GET http://localhost:3000/recipes
+{
+    "message":"Schau es dir an!"
+}
