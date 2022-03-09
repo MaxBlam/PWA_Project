@@ -1,4 +1,4 @@
-importScripts("/precache-manifest.4e7e2da06c7465e9fdb411bbe9ca0556.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
+importScripts("/precache-manifest.48dc449b67f0fb90c48713f0afa17846.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 /* global workbox */
 if (workbox) {
@@ -8,7 +8,7 @@ if (workbox) {
   workbox.precaching.precacheAndRoute(self.__precacheManifest);
   workbox.routing.registerRoute(
     new RegExp('/recipes'),
-    new workbox.strategies.StaleWhileRevalidate({
+    new workbox.strategies.NetworkFirst({
       cacheName: 'Nekotastic Recipe Cache',
     }),
   );

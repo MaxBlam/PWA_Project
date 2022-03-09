@@ -1,12 +1,13 @@
 <template>
   <v-card class="mx-3 my-12 rounded-xl" width="374">
     <v-img
+      @click="$router.push(`/r/${recipe.id}`)"
       :src="recipe.img"
       aspect-ratio="1"
       :to="`/r/` + recipe.id"
     ></v-img>
 
-    <v-card-title class="text-truncate" :to="`/r/` + recipe.id">{{
+    <v-card-title class="text-truncate" @click="$router.push(`/r/${recipe.id}`)">{{
       recipe.title
     }}</v-card-title>
 
