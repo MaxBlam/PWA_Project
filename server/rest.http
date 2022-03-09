@@ -1,3 +1,9 @@
+POST https://nekotastic.herokuapp.com/notify
+
+{
+    "message":"Schau es dir an!"
+}
+####
 POST http://localhost:3000/notify
 
 {
