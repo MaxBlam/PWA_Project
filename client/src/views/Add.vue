@@ -76,13 +76,15 @@
               :value="3"
               v-model="rating"
             ></v-rating>
-            <v-btn v-haptic
+            <v-btn
+              v-haptic
               class="mt-3"
               :disabled="
                 desc == '' ||
                 title == '' ||
                 prep == '' ||
-                ingredients.length == 0
+                ingredients.length == 0 ||
+                offline
               "
               @click="sendRecipe"
             >
@@ -115,6 +117,12 @@ export default {
     descRules: [value => !value || value.length < 100 || 'Too many characters'],
     titleRules: [value => !value || value.length < 40 || 'Too many characters'],
   }),
+  props: {
+    offline: {
+      type: Boolean,
+      default: () => false,
+    },
+  },
   methods: {
     close() {
       this.$router.push('/');

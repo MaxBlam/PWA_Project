@@ -1,17 +1,13 @@
 <template>
   <v-container fluid>
-    <v-img
-      :src="recipe.img"
-      height="250"
-      class="rounded-lg mb-5"
-    ></v-img>
+    <v-img :src="recipe.img" height="250" class="rounded-lg mb-5"></v-img>
     <v-container>
       <v-btn to="/library" depressed color="warning" class="mb-3">
         <v-icon>mdi-chevron-left</v-icon> Go back
       </v-btn>
       <p class="text-h4 warning--text">{{ recipe.title }}</p>
       <v-row align="center">
-        <v-col cols="12" md="6" >
+        <v-col cols="12" md="6">
           <v-list class="rounded-lg">
             <v-subheader class="text-h6">Zutaten:</v-subheader>
             <v-list-item
@@ -52,6 +48,10 @@ export default {
     id: {
       type: String,
       default: () => {},
+    },
+    offline: {
+      type: Boolean,
+      default: () => false,
     },
   },
   computed: {

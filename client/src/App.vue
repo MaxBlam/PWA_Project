@@ -11,7 +11,7 @@
       v-if="updateAlert"
     >
       Update vorhanden, bitte neustarten!
-      <v-btn light @click="location.reload()"> Reload </v-btn>
+      <v-btn light @click="window.location.reload()"> Reload </v-btn>
     </v-alert>
     <v-alert
       border="top"
@@ -22,11 +22,11 @@
       tile
       v-if="updateAlert"
     >
-      Update vorhanden, bitte neustarten!
-      <v-btn light @click="location.reload()"> Reload </v-btn>
+      You're offline!
     </v-alert>
     <v-main>
       <router-view
+        :offline="offline"
         :recipes="recipes"
         @sendRecipe="sendRecipe"
         @getRecipes="getRecipes"
@@ -48,6 +48,7 @@ export default {
     updateAlert: false,
     serverAddress: process.env.VUE_APP_SERVER,
     offline: false,
+    window: null,
   }),
   created() {
     this.getRecipes();
@@ -56,6 +57,7 @@ export default {
     });
     document.addEventListener('offline', () => (this.offline = true));
     document.addEventListener('online', () => (this.offline = false));
+    this.window = window;
   },
   methods: {
     async getRecipes() {

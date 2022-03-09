@@ -1,18 +1,18 @@
-importScripts("/precache-manifest.48dc449b67f0fb90c48713f0afa17846.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
+importScripts("/precache-manifest.65b9998a0dfdb51d8f052234dbb3109d.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 /* global workbox */
 if (workbox) {
-  self.skipWaiting();
+  self.skipWaiting(); // Update Service Worker
   console.log(`Workbox is loaded`);
   workbox.setConfig({ debug: true });
   workbox.precaching.precacheAndRoute(self.__precacheManifest);
-  workbox.routing.registerRoute(
+  workbox.routing.registerRoute( // Cache
     new RegExp('/recipes'),
     new workbox.strategies.NetworkFirst({
       cacheName: 'Nekotastic Recipe Cache',
     }),
   );
-  self.addEventListener('push', event => {
+  self.addEventListener('push', event => { // Push Notifications
     const data = event.data.json();
     self.registration.showNotification(data.title, {
       body: data.body.message,
