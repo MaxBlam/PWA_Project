@@ -1,0 +1,15 @@
+POST https://nekotastic.herokuapp.com/notify
+
+{
+    "message":"Schau es dir an!"
+}
+####
+POST http://localhost:3000/notify
+
+{
+    "message":"Schau es dir an!"
+}
+####
+GET http://localhost:3000/recipes
+####
+DELETE http://localhost:3000/recipe/1
