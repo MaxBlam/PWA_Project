@@ -4,6 +4,6 @@
 
 <template>
   <main>
-    <nav class="bg-black">test</nav>
+    
   </main>
 </template>
