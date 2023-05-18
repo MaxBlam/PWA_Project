@@ -5,11 +5,11 @@ import { setCacheNameDetails } from "workbox-core";
 import { skipWaiting, clientsClaim } from "workbox-core";
 
 self.addEventListener("install", (event) => {
-  self.skipWaiting();
-  event.waitUntil(clientsClaim());
   event.waitUntil(
     caches.open("NekotasticRecipeCache").then((cache) => {
-      return cache.addAll(self.__WB_MANIFEST);
+      self.__WB_MANIFEST.forEach((e) => {
+        cache.add(e);
+      });
     })
   );
 });
@@ -41,6 +41,5 @@ const navigationRoute = new NavigationRoute(({ event }) => {
   // for navigations in your SPA.
 });
 registerRoute(navigationRoute);
-
 skipWaiting();
 clientsClaim();
