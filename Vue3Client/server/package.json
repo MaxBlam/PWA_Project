@@ -1,7 +1,7 @@
 {
-  "name": "NekotasticServer",
+  "name": "nekotasticserver",
   "version": "1.0.0",
-  "description": "a simple test plf",
+  "description": "backend for nekotastic",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
