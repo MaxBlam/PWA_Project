@@ -4,7 +4,11 @@ module.exports = {
   purge: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   darkMode: "media",
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        visibility: "visibility 0s, opacity 0.5s linear",
+      },
+    },
   },
   plugins: [],
 };

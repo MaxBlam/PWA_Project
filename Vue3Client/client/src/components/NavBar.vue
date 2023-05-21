@@ -6,22 +6,30 @@
     <span class="flex-auto mx-2">
       {{ this.$route.name }}
     </span>
-    <button
-      type="button"
-      class="bg-emerald-800 p-3 rounded-md text-white space-y-1"
-    >
-      <span class="block w-5 h-0.5 bg-white"></span>
-      <span class="block w-5 h-0.5 bg-white"></span>
-      <span class="block w-5 h-0.5 bg-white"></span>
-    </button>
+    <DropDown :routes="routes" />
   </nav>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import DropDown from "@/components/DropDown.vue";
 
 export default defineComponent({
   name: "NavBar",
+  components: {
+    DropDown,
+  },
+  data() {
+    return {};
+  },
+  computed: {
+    routes() {
+      return this.$router.options.routes.map((el) => ({
+        path: el.path,
+        name: el.name,
+      }));
+    },
+  },
 });
 </script>
 
