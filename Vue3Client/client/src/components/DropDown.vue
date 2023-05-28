@@ -56,7 +56,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, PropType } from "vue";
 
 export default defineComponent({
   data() {
@@ -65,7 +65,10 @@ export default defineComponent({
     };
   },
   props: {
-    routes: Array<{ path: string; name: string }>(),
+    routes: {
+      type: Array as PropType<{ path: string; name: string }[]>,
+      required: true,
+    },
   },
 });
 </script>
