@@ -2,15 +2,17 @@
   <div class="relative inline-block text-left">
     <button
       type="button"
-      class="bg-emerald-800 p-3 rounded-md text-white space-y-1"
+      class="bg-neutral p-3 rounded-md text-white space-y-1"
       @click="dropdown = !dropdown"
     >
-      <span class="block w-5 h-0.5 bg-white"></span>
-      <span class="block w-5 h-0.5 bg-white"></span>
-      <span class="block w-5 h-0.5 bg-white"></span>
+      <span
+        :class="`block w-5 h-0.5 ${options.color} ${options.bgColor}`"
+        v-for="index of 3"
+        :key="index"
+      ></span>
     </button>
     <div
-      class="absolute transition-all right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-4 ring-emerald-800 ring-opacity-5"
+      class="absolute transition-all right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-4 ring-secondary"
       role="menu"
       aria-orientation="vertical"
       aria-labelledby="menu-button"
@@ -29,7 +31,7 @@
       <div class="py-1" role="none">
         <!-- Enumerate through custom list to ensure reusabilty -->
         <router-link
-          v-for="(route, index) in routes"
+          v-for="(route, index) in options.content"
           :key="route.path"
           :to="route.path"
           class="text-gray-700 block px-4 py-2 text-sm hover:bg-emerald-600 hover:bg-opacity-25"
@@ -38,17 +40,6 @@
           :id="`menu-item-${index}`"
           @click="dropdown = !dropdown"
           >{{ route.name }}</router-link
-        >
-      </div>
-      <div class="py-1" role="none">
-        <router-link
-          to="/"
-          class="text-gray-700 block px-4 py-2 text-sm hover:bg-emerald-600 hover:bg-opacity-25"
-          role="menuitem"
-          tabindex="-1"
-          id="menu-item-0"
-          @click="dropdown = !dropdown"
-          >Home</router-link
         >
       </div>
     </div>
@@ -65,8 +56,12 @@ export default defineComponent({
     };
   },
   props: {
-    routes: {
-      type: Array as PropType<{ path: string; name: string }[]>,
+    options: {
+      type: Object as PropType<{
+        content: Array<{ path: string; name: string }>;
+        bgColor: string;
+        color: string;
+      }>,
       required: true,
     },
   },
