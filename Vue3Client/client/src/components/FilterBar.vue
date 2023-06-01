@@ -1,11 +1,11 @@
 <template>
-  <div
-    class="flex flex-row flex-wrap justify-center space-x-4 space-y-4 items-center my-4 mx-2"
-  >
-    <i>Searchicon</i>
-    <input class="bg-secondary p-2 rounded-xl" />
+  <div class="flex flex-row flex-wrap justify-center items-center my-4 mx-2">
+    <div class="space-x-2 m-2">
+      <i>Searchicon</i>
+      <input class="bg-secondary p-2 rounded-xl flex-1 min-w-0" />
+    </div>
     <button
-      class="bg-accent text-secondary px-6 py-2 rounded-xl hover:shadow-xl"
+      class="bg-accent text-secondary px-6 py-2 m-2 rounded-xl hover:shadow-xl"
       v-for="filter of quickFilter"
       :key="filter"
       @click="selected = filter"
