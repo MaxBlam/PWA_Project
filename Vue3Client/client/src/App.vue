@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-neutral h-screen">
+  <div class="bg-neutral min-h-screen max-h-full">
     <NavBar />
     <router-view />
   </div>

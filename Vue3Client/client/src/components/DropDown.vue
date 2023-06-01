@@ -48,6 +48,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
+import { RouteRecordName } from "vue-router";
 
 export default defineComponent({
   data() {
@@ -58,7 +59,7 @@ export default defineComponent({
   props: {
     options: {
       type: Object as PropType<{
-        content: Array<{ path: string; name: string }>;
+        content: Array<{ path: string; name: RouteRecordName | undefined }>;
         bgColor: string;
         color: string;
       }>,

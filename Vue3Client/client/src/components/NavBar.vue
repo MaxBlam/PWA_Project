@@ -1,24 +1,17 @@
 <template>
   <nav class="flex flex-row flex-nowrap py-2 px-4 items-center">
     <img src="@/assets/logo.png" alt="icon" class="w-10 h-10" />
-    <span
-      class="flex-auto mx-2 text-text font-semibold cursor-pointer hover:drop-shadow-lg transition-all"
-    >
+    <span class="mx-2 text-text font-semibold">
       {{ $route.name }}
     </span>
     <!-- Spacer -->
-    <span
-      class="mx-2 text-text font-semibold cursor-pointer hover:drop-shadow-lg transition-all"
-      @click="$router.push('/about')"
-    >
-      About
-    </span>
+    <div class="flex-1"></div>
     <DropDown :options="options" />
   </nav>
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from "vue";
+import { defineComponent } from "vue";
 import DropDown from "@/components/DropDown.vue";
 
 export default defineComponent({
