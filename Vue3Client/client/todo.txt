@@ -1,0 +1,7 @@
+- RecipePreview ist verschieden groß
+- RecipeView für Mobile optimisieren
+- Bilder mit Avif und Webp Datentypen
+- Icons hinzufügen
+- Logo hinzufügen
+- Styling verbessern
+- Animationen hinzufügen

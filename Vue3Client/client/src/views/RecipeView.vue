@@ -56,6 +56,7 @@
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
 import { useStore } from "vuex";
+import { Recipe } from "@/global";
 
 export default defineComponent({
   name: "RecipeView",
@@ -78,30 +79,10 @@ export default defineComponent({
     },
   },
   computed: {
-    recipe(): {
-      id: string;
-      src: string;
-      rating: number;
-      time: number;
-      name: string;
-      desc: string;
-      directions: string;
-      ingredients: number; //Array<string>;
-    } {
+    recipe(): Recipe {
       const store = useStore();
       //If Id not exists
-      return store.state.recipes.filter(
-        (el: {
-          id: string;
-          src: string;
-          rating: number;
-          time: number;
-          name: string;
-          desc: string;
-          directions: string;
-          ingredients: number; //Array<string>;
-        }) => el.id === this.id
-      )[0];
+      return store.state.recipes.filter((el: Recipe) => el.id === this.id)[0];
     },
   },
 });
