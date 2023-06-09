@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-row flex-wrap justify-center items-center my-4 mx-2">
+  <div class="flex flex-row flex-wrap justify-center items-center mx-2">
     <div class="space-x-2 m-2">
       <i>Searchicon</i>
       <input class="bg-secondary p-2 rounded-xl flex-1 min-w-0" />

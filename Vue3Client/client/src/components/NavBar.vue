@@ -1,5 +1,5 @@
 <template>
-  <nav class="flex flex-row flex-nowrap py-2 px-4 items-center">
+  <nav class="flex flex-row flex-nowrap py-2 px-4 items-center mb-4">
     <img src="@/assets/logo.png" alt="icon" class="w-10 h-10" />
     <span class="mx-2 text-text font-semibold">
       {{ $route.name }}

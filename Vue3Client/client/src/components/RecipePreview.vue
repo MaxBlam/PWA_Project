@@ -35,12 +35,14 @@ export default defineComponent({
   props: {
     recipe: {
       type: Object as PropType<{
+        id: string;
         src: string;
         rating: number;
         time: number;
         name: string;
         desc: string;
-        id: string;
+        directions: string;
+        ingredients: Array<string>;
       }>,
       required: true,
     },
