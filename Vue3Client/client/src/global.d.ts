@@ -7,4 +7,5 @@ export interface Recipe {
   desc: string;
   directions: string;
   ingredients: number; //Array<string>;
+  type: string;
 }

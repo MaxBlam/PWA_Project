@@ -3,7 +3,7 @@
     <FilterBar />
     <div class="flex flex-row flex-wrap items-center justify-center my-4">
       <RecipePreview
-        v-for="recipe of $store.state.recipes"
+        v-for="recipe of $store.state.filteredRecipes"
         :recipe="recipe"
         :key="recipe.id"
       />

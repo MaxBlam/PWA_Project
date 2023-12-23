@@ -21,7 +21,7 @@ export default defineComponent({
   methods: {
     async getRecipes() {
       const store = useStore();
-      store.state.recipes = data;
+      store.state.recipes = store.state.filteredRecipes = data;
     },
   },
 });

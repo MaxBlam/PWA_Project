@@ -25,7 +25,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from "vue";
+import { defineComponent } from "vue";
+import { Recipe } from "@/global";
 
 export default defineComponent({
   name: "RecipePreview",
@@ -34,16 +35,7 @@ export default defineComponent({
   },
   props: {
     recipe: {
-      type: Object as PropType<{
-        id: string;
-        src: string;
-        rating: number;
-        time: number;
-        name: string;
-        desc: string;
-        directions: string;
-        ingredients: Array<string>;
-      }>,
+      type: Object as () => Recipe,
       required: true,
     },
   },

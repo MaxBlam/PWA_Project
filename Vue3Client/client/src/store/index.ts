@@ -4,6 +4,7 @@ import { Recipe } from "@/global";
 export default createStore({
   state: {
     recipes: [] as Array<Recipe>,
+    filteredRecipes: [] as Array<Recipe>,
   },
   getters: {},
   mutations: {},

@@ -1,3 +1,4 @@
+Frontend:
 - RecipePreview ist verschieden groß
 - RecipeView für Mobile optimisieren
 - Bilder mit Avif und Webp Datentypen
@@ -5,3 +6,7 @@
 - Logo hinzufügen
 - Styling verbessern
 - Animationen hinzufügen
+- Testdaten brauchen Tags
+
+Backend:
+- Express mit Nuxt ersetzen?
